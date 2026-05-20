@@ -243,30 +243,30 @@ export default function HeroCarousel({ locale }: HeroCarouselProps) {
           style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent)' }}
         />
 
-        <div className="relative z-10 h-full flex items-center px-6 md:px-16 max-w-7xl mx-auto w-full py-16">
-          <div className="flex flex-col lg:flex-row gap-10 items-center w-full">
+        <div className="relative z-10 h-full flex items-center px-6 md:px-16 max-w-7xl mx-auto w-full py-6 md:py-16">
+          <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 items-center w-full">
             {/* Left: headline + CTAs */}
             <div className="flex-1 text-left">
               {/* Eyebrow */}
               <p
-                className="text-xs uppercase tracking-[0.25em] mb-4"
+                className="text-xs uppercase tracking-[0.25em] mb-2 md:mb-4"
                 style={{ color: 'rgba(201,168,76,0.8)', fontFamily: 'var(--font-body)' }}
               >
                 Nina Flores · REALTOR® · Southern Arizona
               </p>
               <h1
-                className="text-4xl sm:text-5xl md:text-6xl font-black mb-5 leading-tight text-white"
+                className="text-3xl sm:text-5xl md:text-6xl font-black mb-3 md:mb-5 leading-tight text-white"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
                 {t('hero.headline')}
               </h1>
               {/* Thin gold divider */}
               <div
-                className="mb-5 w-20 h-px"
+                className="mb-3 md:mb-5 w-20 h-px"
                 style={{ background: 'linear-gradient(90deg, rgba(201,168,76,0.7), transparent)' }}
               />
               <p
-                className="text-base sm:text-lg mb-8 opacity-75"
+                className="text-sm sm:text-lg mb-4 md:mb-8 opacity-75"
                 style={{ fontFamily: 'var(--font-body)', color: 'var(--color-cream)' }}
               >
                 {t('hero.subheadline')}

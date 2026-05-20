@@ -41,13 +41,13 @@ export default function MortgageCalculator({ labels }: MortgageCalculatorProps) 
 
   return (
     <>
-      <div className="rounded-sm p-8 shadow-sm" style={{ background: 'var(--color-white)' }}>
-        <h2 className="text-2xl font-bold mb-1" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-maroon)' }}>
+      <div className="rounded-sm p-4 md:p-8 shadow-sm" style={{ background: 'var(--color-white)' }}>
+        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-maroon)' }}>
           {labels.title}
         </h2>
-        <p className="text-sm mb-6 opacity-60" style={{ fontFamily: 'var(--font-body)' }}>{labels.subtitle}</p>
+        <p className="text-sm mb-3 md:mb-6 opacity-60" style={{ fontFamily: 'var(--font-body)' }}>{labels.subtitle}</p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6">
           {/* Home Price */}
           <div>
             <div className="flex justify-between text-sm mb-1" style={{ fontFamily: 'var(--font-body)' }}>
@@ -90,18 +90,18 @@ export default function MortgageCalculator({ labels }: MortgageCalculatorProps) 
         </div>
 
         {/* Result */}
-        <div className="mt-8 rounded-sm p-6 text-center" style={{ background: 'var(--color-cream)' }}>
+        <div className="mt-4 md:mt-8 rounded-sm p-4 md:p-6 text-center" style={{ background: 'var(--color-cream)' }}>
           <p className="text-sm uppercase tracking-widest opacity-60 mb-1" style={{ fontFamily: 'var(--font-body)' }}>
             {labels.monthlyPayment}
           </p>
-          <p className="text-5xl font-black" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-maroon)' }}>
+          <p className="text-4xl md:text-5xl font-black" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-maroon)' }}>
             {fmt(monthly)}
           </p>
           <p className="text-xs mt-2 opacity-50" style={{ fontFamily: 'var(--font-body)' }}>/mo · {labels.disclaimer}</p>
         </div>
 
         {/* Pre-qual CTA */}
-        <div className="mt-6 rounded-sm p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4"
+        <div className="mt-3 md:mt-6 rounded-sm p-3 md:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4"
           style={{ background: 'var(--color-maroon)', color: 'var(--color-cream)' }}>
           <div className="flex-1">
             <p className="text-sm font-semibold" style={{ fontFamily: 'var(--font-body)' }}>{labels.prequalNote}</p>
