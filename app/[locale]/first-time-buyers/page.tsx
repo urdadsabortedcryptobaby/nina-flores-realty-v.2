@@ -2,52 +2,67 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { setRequestLocale } from 'next-intl/server';
 import {
-  Search, FileText, Home, Key, CheckSquare, DollarSign,
+  Search, FileText, Home, Key, CheckSquare, DollarSign, ExternalLink,
 } from 'lucide-react';
+import FloatingChat from '@/components/FloatingChat';
+import CincLink from '@/components/CincLink';
 
 export const metadata: Metadata = {
   title: 'First Time Home Buyers | Nina Flores Realty',
   description: 'Buying your first home in Tucson? Nina Flores walks you through every step of the process with patience and expertise. Call 520.342.4124.',
 };
 
-const steps = [
-  {
-    icon: DollarSign,
-    title: 'Get Pre-Qualified',
-    body: "Before you fall in love with a home, find out what you can afford. Getting pre-qualified with a lender takes about 20 minutes and gives you a clear picture of your budget — plus it shows sellers you're serious. Nina works with trusted local lenders and can connect you today.",
-    anchor: 'prequalify',
-  },
-  {
-    icon: Search,
-    title: 'Define What You Want',
-    body: "Make a list of needs vs. wants — bedrooms, commute distance, school district, yard size. Don't worry if you're not sure yet. That's what Nina is here for. She'll ask the right questions to help you figure out what matters most before you set foot in a single home.",
-  },
-  {
-    icon: Home,
-    title: 'Start Your Home Search',
-    body: "Now the fun part. Nina will set up a personalized search for you through the MLS so you're notified the moment a home that fits your criteria hits the market. Tucson moves fast — being ready means you won't miss out.",
-  },
-  {
-    icon: FileText,
-    title: 'Make an Offer',
-    body: "Found the one? Nina will help you craft a competitive offer based on comparable sales, market conditions, and your goals. She'll negotiate on your behalf — calmly, confidently, and always with your interests first.",
-  },
-  {
-    icon: CheckSquare,
-    title: 'Inspections & Due Diligence',
-    body: "Once under contract, you'll schedule a home inspection. This is your opportunity to learn everything about the property. If issues come up, Nina knows how to negotiate repairs or credits so you're protected. Nothing gets past her.",
-  },
-  {
-    icon: Key,
-    title: 'Close & Get Your Keys',
-    body: "Closing day is the finish line — but Nina will have walked you through every document beforehand so there are no surprises. You'll sign, the keys will be yours, and she'll be right there celebrating with you.",
-  },
-];
-
 export default async function FirstTimeBuyersPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const base = locale === 'en' ? '' : '/es';
+
+  const steps = [
+    {
+      icon: DollarSign,
+      title: 'Get Pre-Qualified',
+      body: "Before you fall in love with a home, find out what you can afford. Getting pre-qualified with a lender takes about 20 minutes and gives you a clear picture of your budget — plus it shows sellers you're serious. Nina works with trusted local lenders and can connect you today.",
+      anchor: 'prequalify',
+      href: `${base}/first-time-buyers/prequalify`,
+      cta: 'Learn about pre-qualification →',
+    },
+    {
+      icon: Search,
+      title: 'Define What You Want',
+      body: "Make a list of needs vs. wants — bedrooms, commute distance, school district, yard size. Don't worry if you're not sure yet. That's what Nina is here for. She'll ask the right questions to help you figure out what matters most before you set foot in a single home.",
+      href: `${base}/first-time-buyers/wish-list`,
+      cta: 'Build your home wish list →',
+    },
+    {
+      icon: Home,
+      title: 'Start Your Home Search',
+      body: "Now the fun part. Nina will set up a personalized search for you through the MLS so you're notified the moment a home that fits your criteria hits the market. Tucson moves fast — being ready means you won't miss out.",
+      href: 'https://ninaflores.viewalltucsonhomes.com/search',
+      external: true,
+      cta: 'Search Now',
+    },
+    {
+      icon: FileText,
+      title: 'Make an Offer',
+      body: "Found the one? Nina will help you craft a competitive offer based on comparable sales, market conditions, and your goals. She'll negotiate on your behalf — calmly, confidently, and always with your interests first.",
+      href: `${base}/first-time-buyers/process`,
+      cta: 'See the buying process →',
+    },
+    {
+      icon: CheckSquare,
+      title: 'Inspections & Due Diligence',
+      body: "Once under contract, you'll schedule a home inspection. This is your opportunity to learn everything about the property. If issues come up, Nina knows how to negotiate repairs or credits so you're protected. Nothing gets past her.",
+      href: `${base}/first-time-buyers/process`,
+      cta: 'See the buying process →',
+    },
+    {
+      icon: Key,
+      title: 'Close & Get Your Keys',
+      body: "Closing day is the finish line — but Nina will have walked you through every document beforehand so there are no surprises. You'll sign, the keys will be yours, and she'll be right there celebrating with you.",
+      href: `${base}/first-time-buyers/process`,
+      cta: 'See the buying process →',
+    },
+  ];
 
   return (
     <>
@@ -76,13 +91,13 @@ export default async function FirstTimeBuyersPage({ params }: { params: Promise<
             That&apos;s completely normal — and it&apos;s exactly why Nina is here. She&apos;s guided dozens of first-time buyers through the process from start to keys-in-hand, making sure you understand every step and never feel alone.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#process"
+            <Link
+              href={`${base}/first-time-buyers/process`}
               className="px-8 py-3.5 rounded-sm font-bold text-base transition-opacity hover:opacity-90"
               style={{ background: 'var(--color-gold)', color: 'var(--color-charcoal)', fontFamily: 'var(--font-body)' }}
             >
               See the Process
-            </a>
+            </Link>
             <Link
               href={`${base}/contact`}
               className="px-8 py-3.5 rounded-sm font-bold text-base border-2 text-white transition-colors hover:bg-white/10"
@@ -127,11 +142,11 @@ export default async function FirstTimeBuyersPage({ params }: { params: Promise<
           <div className="flex flex-col gap-6">
             {steps.map((step, i) => {
               const Icon = step.icon;
-              return (
+              const isExternal = step.external;
+
+              const cardContent = (
                 <div
-                  key={step.title}
-                  id={step.anchor}
-                  className="flex gap-6 rounded-sm p-6"
+                  className="flex gap-6 rounded-sm p-6 transition-shadow hover:shadow-md"
                   style={{ background: 'var(--color-white)', borderLeft: '4px solid var(--color-maroon)' }}
                 >
                   <div className="shrink-0 flex flex-col items-center gap-2">
@@ -148,7 +163,7 @@ export default async function FirstTimeBuyersPage({ params }: { params: Promise<
                       {String(i + 1).padStart(2, '0')}
                     </span>
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3
                       className="text-lg font-bold mb-2"
                       style={{ fontFamily: 'var(--font-display)', color: 'var(--color-charcoal)' }}
@@ -156,13 +171,40 @@ export default async function FirstTimeBuyersPage({ params }: { params: Promise<
                       {step.title}
                     </h3>
                     <p
-                      className="text-sm leading-relaxed opacity-75"
+                      className="text-sm leading-relaxed opacity-75 mb-4"
                       style={{ fontFamily: 'var(--font-body)' }}
                     >
                       {step.body}
                     </p>
+                    {/* CTA */}
+                    {isExternal ? (
+                      <CincLink
+                        href={step.href!}
+                        className="inline-flex items-center gap-1.5 px-5 py-2 rounded-sm text-sm font-bold text-white transition-opacity hover:opacity-90"
+                        style={{ background: 'var(--color-maroon)', fontFamily: 'var(--font-body)' } as React.CSSProperties}
+                      >
+                        {step.cta} <ExternalLink size={13} />
+                      </CincLink>
+                    ) : (
+                      <span
+                        className="text-sm font-semibold"
+                        style={{ color: 'var(--color-maroon)', fontFamily: 'var(--font-body)' }}
+                      >
+                        {step.cta}
+                      </span>
+                    )}
                   </div>
                 </div>
+              );
+
+              if (isExternal) {
+                return <div key={step.title} id={step.anchor}>{cardContent}</div>;
+              }
+
+              return (
+                <Link key={step.title} href={step.href!} id={step.anchor} className="block group">
+                  {cardContent}
+                </Link>
               );
             })}
           </div>
@@ -244,6 +286,9 @@ export default async function FirstTimeBuyersPage({ params }: { params: Promise<
           </div>
         </div>
       </section>
+
+      {/* Floating chat */}
+      <FloatingChat locale={locale} />
     </>
   );
 }
