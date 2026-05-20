@@ -25,9 +25,9 @@ export default function Navbar({ locale }: NavbarProps) {
       href: `${base}/first-time-buyers`,
       items: [
         { href: `${base}/first-time-buyers`, label: 'Overview' },
-        { href: `${base}/first-time-buyers#process`, label: 'The Buying Process' },
-        { href: `${base}/first-time-buyers#prequalify`, label: 'Get Pre-Qualified' },
-        { href: `${base}/blog?category=first-time-home-buyers`, label: 'First Timer Tips' },
+        { href: `${base}/first-time-buyers/process`, label: 'The Buying Process' },
+        { href: `${base}/first-time-buyers/prequalify`, label: 'Get Pre-Qualified' },
+        { href: `${base}/first-time-buyers/tips`, label: 'First Timer Tips' },
       ],
     },
     selling: {
