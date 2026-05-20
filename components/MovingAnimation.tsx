@@ -94,8 +94,7 @@ export default function MovingAnimation() {
         .leg-r    { animation: legR 0.46s ease-in-out infinite; }
       `}</style>
 
-      {/* No fixed height — SVG sizes itself from viewBox aspect ratio */}
-      <div className="w-full overflow-hidden">
+      <div className="w-full">
         <svg
           viewBox={`0 0 1200 210`}
           width="100%"

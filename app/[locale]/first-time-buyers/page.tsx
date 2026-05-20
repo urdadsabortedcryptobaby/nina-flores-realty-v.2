@@ -69,8 +69,8 @@ export default async function FirstTimeBuyersPage({ params }: { params: Promise<
     <>
       {/* Hero */}
       <section
-        className="pt-20 pb-0 px-4 text-center overflow-hidden"
-        style={{ background: 'var(--color-maroon)', minHeight: '40vh' }}
+        className="pt-20 pb-0 px-4 text-center"
+        style={{ background: 'var(--color-maroon)', minHeight: '40vh', overflowX: 'hidden' }}
       >
         <div className="max-w-3xl mx-auto pb-8">
           <p
