@@ -289,8 +289,8 @@ export default function HeroCarousel({ locale }: HeroCarouselProps) {
               </div>
             </div>
 
-            {/* Right: Mortgage Calculator */}
-            <div className="w-full lg:w-[480px] shrink-0">
+            {/* Right: Mortgage Calculator — desktop only; mobile renders it below carousel */}
+            <div className="hidden md:block w-full lg:w-[480px] shrink-0">
               <MortgageCalculator labels={calcLabels} />
             </div>
           </div>

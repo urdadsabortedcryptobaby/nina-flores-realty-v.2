@@ -40,6 +40,23 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* Hero Carousel */}
       <HeroCarousel locale={locale} />
 
+      {/* Mortgage Calculator — mobile only (desktop renders inside carousel) */}
+      <section className="block md:hidden px-4 py-8" style={{ background: '#1c1c1c' }}>
+        <MortgageCalculator labels={{
+          title: t('calculator.title'),
+          subtitle: t('calculator.subtitle'),
+          homePrice: t('calculator.homePrice'),
+          downPayment: t('calculator.downPayment'),
+          interestRate: t('calculator.interestRate'),
+          loanTerm: t('calculator.loanTerm'),
+          years: t('calculator.years'),
+          monthlyPayment: t('calculator.monthlyPayment'),
+          disclaimer: t('calculator.disclaimer'),
+          prequalNote: t('calculator.prequalNote'),
+          prequalBtn: t('calculator.prequalBtn'),
+        }} />
+      </section>
+
       {/* About snippet */}
       <section className="py-16 px-4" style={{ background: 'var(--color-cream)' }}>
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-10 items-center">
