@@ -12,6 +12,7 @@ import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import MortgageCalculator from '@/components/MortgageCalculator';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
 import HeroCarousel from '@/components/HeroCarousel';
+import FloatingChat from '@/components/FloatingChat';
 import { NEIGHBORHOODS } from '@/lib/neighborhoods';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -213,6 +214,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </section>
+
+      <FloatingChat locale={locale} />
     </>
   );
 }

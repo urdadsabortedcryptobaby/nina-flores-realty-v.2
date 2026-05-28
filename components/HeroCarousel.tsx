@@ -181,7 +181,7 @@ export default function HeroCarousel({ locale }: HeroCarouselProps) {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  const slides = 3;
+  const slides = 4;
 
   const next = useCallback(() => setCurrent(c => (c + 1) % slides), []);
   const prev = () => setCurrent(c => (c - 1 + slides) % slides);
@@ -340,9 +340,49 @@ export default function HeroCarousel({ locale }: HeroCarouselProps) {
         </div>
       </div>
 
-      {/* ── SLIDE 3 ── Explore Southern AZ / Events */}
+      {/* ── SLIDE 3 ── Escape the Rent Trap */}
       <div
         className={`absolute inset-0 transition-opacity duration-700 flex items-center justify-center ${current === 2 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+        style={{ background: 'var(--color-maroon)' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none opacity-10"
+          style={{
+            backgroundImage: 'repeating-linear-gradient(135deg, #C9A84C 0px, #C9A84C 1px, transparent 1px, transparent 48px)',
+          }}
+        />
+        <div className="relative z-10 text-center px-6 max-w-2xl mx-auto">
+          <p
+            className="text-xs uppercase tracking-widest mb-4 opacity-70"
+            style={{ color: 'var(--color-gold)', fontFamily: 'var(--font-body)' }}
+          >
+            Stop Renting · Start Owning
+          </p>
+          <h2
+            className="text-4xl sm:text-5xl md:text-6xl font-black mb-4 leading-tight text-white"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            Escape the Rent Trap
+          </h2>
+          <p
+            className="text-lg mb-6 opacity-80"
+            style={{ fontFamily: 'var(--font-body)', color: 'var(--color-cream)' }}
+          >
+            Nina helps renters make the leap to homeownership — even when it feels out of reach. Get your workbook today.
+          </p>
+          <Link
+            href={`${base}/rent-trap`}
+            className="inline-block px-8 py-3.5 rounded-sm font-bold text-base transition-opacity hover:opacity-90"
+            style={{ background: 'var(--color-gold)', color: 'var(--color-charcoal)', fontFamily: 'var(--font-body)' }}
+          >
+            Renter&apos;s Guide to Homeownership
+          </Link>
+        </div>
+      </div>
+
+      {/* ── SLIDE 4 ── Explore Southern AZ / Events */}
+      <div
+        className={`absolute inset-0 transition-opacity duration-700 flex items-center justify-center ${current === 3 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
         style={{ background: 'var(--color-charcoal)' }}
       >
         {/* Subtle diagonal texture */}

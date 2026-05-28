@@ -21,13 +21,14 @@ export default function Navbar({ locale }: NavbarProps) {
 
   const dropdowns: Record<string, { label: string; href?: string; items: { href: string; label: string }[] }> = {
     firstTimeBuyers: {
-      label: 'First Time Home Buyers',
-      href: `${base}/first-time-buyers`,
+      label: 'Buying',
+      href: `${base}/buying`,
       items: [
-        { href: `${base}/first-time-buyers`, label: 'Overview' },
+        { href: `${base}/first-time-buyers`, label: 'First Time Home Buyer' },
         { href: `${base}/first-time-buyers/process`, label: 'The Buying Process' },
         { href: `${base}/first-time-buyers/prequalify`, label: 'Get Pre-Qualified' },
         { href: `${base}/first-time-buyers/tips`, label: 'First Timer Tips' },
+        { href: `${base}/rent-trap`, label: "Renter's Guides" },
       ],
     },
     selling: {
