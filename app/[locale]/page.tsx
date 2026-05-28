@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server';
-import { Home, Award, TrendingUp, Building2, Users } from 'lucide-react';
+import { Home, Award, TrendingUp, Building2, Users, DoorOpen } from 'lucide-react';
 import CincLink from '@/components/CincLink';
 import SpecialtyCard from '@/components/SpecialtyCard';
 import NeighborhoodCard from '@/components/NeighborhoodCard';
@@ -34,6 +34,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     { icon: Home, key: 'relocation', href: `${base}/contact` },
     { icon: TrendingUp, key: 'investment', href: `${base}/contact` },
     { icon: Building2, key: 'newBuilds', href: `${base}/contact` },
+    { icon: DoorOpen, key: 'renters', href: `${base}/rent-trap` },
   ] as const;
 
   return (

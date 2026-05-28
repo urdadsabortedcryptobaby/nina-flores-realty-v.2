@@ -43,6 +43,10 @@
     "newBuilds": {
       "title": "New Home Builds",
       "desc": "Work with Nina to navigate new construction communities across Tucson, Marana, Vail, and Sahuarita — with an expert advocate on your side."
+    },
+    "renters": {
+      "title": "Renters",
+      "desc": "Still renting? Nina helps renters make the leap to homeownership — even when it feels out of reach. You may be closer than you think."
     }
   },
   "listings": {
