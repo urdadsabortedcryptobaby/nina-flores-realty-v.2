@@ -24,11 +24,11 @@ export default function Navbar({ locale }: NavbarProps) {
       label: 'Buying',
       href: `${base}/buying`,
       items: [
+        { href: `${base}/rent-trap`, label: "Renter's Guides" },
         { href: `${base}/first-time-buyers`, label: 'First Time Home Buyer' },
         { href: `${base}/first-time-buyers/process`, label: 'The Buying Process' },
         { href: `${base}/first-time-buyers/prequalify`, label: 'Get Pre-Qualified' },
         { href: `${base}/first-time-buyers/tips`, label: 'First Timer Tips' },
-        { href: `${base}/rent-trap`, label: "Renter's Guides" },
       ],
     },
     selling: {
