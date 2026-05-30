@@ -10,7 +10,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     highlights: ['University District', 'Fourth Avenue', 'Barrio Viejo', 'Sam Hughes', 'Midtown'],
     highlightsEs: ['Distrito Universitario', 'Fourth Avenue', 'Barrio Viejo', 'Sam Hughes', 'Midtown'],
     cinc_url: 'https://ninaflores.viewalltucsonhomes.com/search/quick/PDQVLZZZW5WWR1PTY/homes-for-sale-in-tucson',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Rattlesnake_Bridge_-_Photographs_in_the_Carol_M._Highsmith_Archive%2C_Library_of_Congress%2C_Prints_and_Photographs_Division.jpg/800px-Rattlesnake_Bridge_-_Photographs_in_the_Carol_M._Highsmith_Archive%2C_Library_of_Congress%2C_Prints_and_Photographs_Division.jpg',
+    image: '/neighborhoods/tucson.jpg',
   },
   {
     slug: 'vail',
@@ -21,6 +21,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     highlights: ['Rincon Valley', 'Top-rated TUSD schools', 'New construction communities', 'Close to I-10'],
     highlightsEs: ['Rincon Valley', 'Escuelas de alta calificación', 'Comunidades de nueva construcción', 'Cerca de la I-10'],
     cinc_url: 'https://ninaflores.viewalltucsonhomes.com/search/quick/PDQVLZZZ4QV2N8ZZB/homes-for-sale-in-vail',
+    image: '/neighborhoods/vail.jpg',
   },
   {
     slug: 'oro-valley',
@@ -31,6 +32,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     highlights: ['Catalina Mountains views', 'Golf communities', 'Steam Pump Ranch', 'Excellent schools'],
     highlightsEs: ['Vistas a las Catalinas', 'Comunidades de golf', 'Steam Pump Ranch', 'Excelentes escuelas'],
     cinc_url: 'https://ninaflores.viewalltucsonhomes.com/search/quick/PDQVLZZZ304T9L7W2/homes-for-sale-in-oro-valley',
+    image: '/neighborhoods/oro-valley.jpg',
   },
   {
     slug: 'green-valley',
@@ -41,6 +43,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     highlights: ['Active adult communities', 'Golf courses', 'Santa Cruz River Park', 'Close to Mexico border'],
     highlightsEs: ['Comunidades para adultos activos', 'Campos de golf', 'Parque del Río Santa Cruz', 'Cerca de la frontera con México'],
     cinc_url: 'https://ninaflores.viewalltucsonhomes.com/search/quick/PDQVLZZZTXCYXTKBR/homes-for-sale-in-green-valley',
+    image: '/neighborhoods/green-valley.jpg',
   },
   {
     slug: 'marana',
@@ -51,6 +54,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     highlights: ['Dove Mountain', 'Gladden Farms', 'Tangerine Road corridor', 'New construction'],
     highlightsEs: ['Dove Mountain', 'Gladden Farms', 'Corredor Tangerine', 'Nueva construcción'],
     cinc_url: 'https://ninaflores.viewalltucsonhomes.com/search/quick/PDQVLZZZT1Y9NLNJ9/homes-for-sale-in-marana',
+    image: '/neighborhoods/marana.jpg',
   },
   {
     slug: 'sahuarita',
@@ -61,6 +65,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     highlights: ['Green Valley Farms', 'Rancho Sahuarita', 'Sahuarita Lake', 'New home communities'],
     highlightsEs: ['Green Valley Farms', 'Rancho Sahuarita', 'Lago Sahuarita', 'Comunidades de nuevas casas'],
     cinc_url: 'https://ninaflores.viewalltucsonhomes.com/search/quick/PDQVLZZZT13MK95SY/homes-for-sale-in-sahuarita',
+    image: '/neighborhoods/sahuarita.jpg',
   },
   {
     slug: 'catalina-foothills',
@@ -71,6 +76,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     highlights: ['La Encantada shopping', 'Sabino Canyon', 'Custom luxury estates', 'Top-rated schools'],
     highlightsEs: ['Compras en La Encantada', 'Cañón Sabino', 'Residencias de lujo personalizadas', 'Escuelas de alta calificación'],
     cinc_url: 'https://ninaflores.viewalltucsonhomes.com/search',
+    image: '/neighborhoods/catalina-foothills.jpg',
   },
   {
     slug: 'south-tucson',
@@ -81,6 +87,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     highlights: ['South 12th Avenue', 'Affordable entry-level homes', 'Rich Mexican-American heritage', 'Close to downtown'],
     highlightsEs: ['Avenida 12 Sur', 'Casas de entrada asequibles', 'Rica herencia mexicano-americana', 'Cerca del centro'],
     cinc_url: 'https://ninaflores.viewalltucsonhomes.com/search',
+    image: '/neighborhoods/south-tucson.jpg',
   },
 ];
 
