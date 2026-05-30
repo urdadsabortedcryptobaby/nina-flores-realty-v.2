@@ -145,22 +145,6 @@ export default async function FirstTimerTipsPage({ params }: { params: Promise<{
         </div>
       </section>
 
-      {/* Buying Process CTA */}
-      <section className="py-10 px-4 text-center" style={{ background: 'var(--color-cream-dark)' }}>
-        <div className="max-w-xl mx-auto">
-          <p className="text-base mb-4" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-charcoal)', opacity: 0.8 }}>
-            Looking for more information about the home buying process?
-          </p>
-          <Link
-            href={`${base}/first-time-buyers/process`}
-            className="inline-block px-7 py-3 rounded-sm font-bold text-sm text-white transition-opacity hover:opacity-90"
-            style={{ background: 'var(--color-maroon)', fontFamily: 'var(--font-body)' }}
-          >
-            See the Buying Process →
-          </Link>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-14 px-4 text-center" style={{ background: 'var(--color-maroon)' }}>
         <div className="max-w-xl mx-auto">
