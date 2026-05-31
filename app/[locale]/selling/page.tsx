@@ -191,7 +191,7 @@ export default async function SellingPage({ params }: { params: Promise<{ locale
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
             {CHALLENGES.map((item) => (
               <div
                 key={item.num}
@@ -219,6 +219,13 @@ export default async function SellingPage({ params }: { params: Promise<{ locale
               </div>
             ))}
           </div>
+          <Link
+            href={`${base}/selling/home-worth`}
+            className="inline-block px-7 py-3.5 rounded-sm font-bold text-base text-white transition-opacity hover:opacity-90"
+            style={{ background: 'var(--color-maroon)', fontFamily: 'var(--font-body)' }}
+          >
+            Find Out What Your Home Could Be Worth →
+          </Link>
         </div>
       </section>
 
