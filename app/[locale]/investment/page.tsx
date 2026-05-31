@@ -7,8 +7,8 @@ import LeadCaptureForm from '@/components/LeadCaptureForm';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return locale === 'es'
-    ? { title: 'Propiedades de Inversión en Tucson | Nina Flores REALTOR®', description: 'Encuentra propiedades de inversión en Tucson — alquileres, multifamiliares, flipping y más con Nina Flores.' }
-    : { title: 'Investment Properties in Tucson | Nina Flores REALTOR®', description: 'Find investment properties in Tucson — rentals, multifamily, flipping, STRs, and generational wealth with Nina Flores.' };
+    ? { title: 'Invertir en Tucson | Nina Flores REALTOR®', description: 'Encuentra propiedades de inversión en Tucson — alquileres, multifamiliares, flipping y más con Nina Flores.' }
+    : { title: 'Investing in Tucson | Nina Flores REALTOR®', description: 'Find investment properties in Tucson — rentals, multifamily, flipping, STRs, and generational wealth with Nina Flores.' };
 }
 
 const INVESTMENT_TYPES = [
@@ -63,7 +63,7 @@ export default async function InvestmentPage({ params }: { params: Promise<{ loc
           <TrendingUp size={26} color="white" />
         </div>
         <h1 className="text-4xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-          {isEs ? 'Propiedades de Inversión' : 'Investment Properties'}
+          {isEs ? 'Invertir en Tucson' : 'Investing in Tucson'}
         </h1>
         <p className="text-base opacity-70 max-w-2xl mx-auto" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-cream)' }}>
           {isEs

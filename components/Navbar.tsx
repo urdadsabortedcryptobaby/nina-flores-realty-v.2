@@ -33,10 +33,12 @@ export default function Navbar({ locale }: NavbarProps) {
     },
     selling: {
       label: 'Selling',
+      href: `${base}/selling`,
       items: [
-        { href: `${base}/blog?category=selling-tips`, label: 'Selling Tips' },
         { href: `${base}/selling/home-worth`, label: "What's My Home Worth?" },
         { href: `${base}/selling/checklist`, label: 'Selling Checklist' },
+        { href: `${base}/investing`, label: 'Investing in Real Estate' },
+        { href: `${base}/blog?category=selling-tips`, label: 'Selling Tips' },
       ],
     },
     exploreSouthernAZ: {
