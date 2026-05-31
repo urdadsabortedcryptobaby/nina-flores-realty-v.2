@@ -7,6 +7,7 @@ import '@/app/globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import OmniBanner from '@/components/OmniBanner';
+import FloatingChat from '@/components/FloatingChat';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ninafloresrealty.com'),
@@ -50,6 +51,7 @@ export default async function LocaleLayout({
           <Navbar locale={locale} />
           <main>{children}</main>
           <Footer locale={locale} />
+          <FloatingChat locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>
