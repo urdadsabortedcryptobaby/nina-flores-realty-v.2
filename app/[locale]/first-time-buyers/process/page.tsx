@@ -130,14 +130,24 @@ export default async function BuyingProcessPage({ params }: { params: Promise<{ 
         <p className="text-base opacity-80 max-w-xl mx-auto mb-7" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-cream)' }}>
           12 steps from your first conversation with Nina to getting your keys. Click any step to jump to that section.
         </p>
-        <a
-          href="/BuyerAdvisory.pdf"
-          download
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-sm font-bold text-sm transition-colors hover:bg-white/10"
-          style={{ border: '1px solid rgba(201,168,76,0.5)', color: 'var(--color-cream)', fontFamily: 'var(--font-body)' }}
-        >
-          <Download size={14} /> Download the Buyer Advisory
-        </a>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="/BuyerGuide.pdf"
+            download
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-sm font-bold text-sm transition-colors hover:bg-white/10"
+            style={{ border: '1px solid rgba(201,168,76,0.5)', color: 'var(--color-cream)', fontFamily: 'var(--font-body)' }}
+          >
+            <Download size={14} /> Get My FREE Buyer&apos;s Guide
+          </a>
+          <a
+            href="/BuyerAdvisory.pdf"
+            download
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-sm font-bold text-sm transition-colors hover:bg-white/10"
+            style={{ border: '1px solid rgba(255,255,255,0.25)', color: 'var(--color-cream)', fontFamily: 'var(--font-body)' }}
+          >
+            <Download size={14} /> Buyer Advisory
+          </a>
+        </div>
       </div>
 
       {/* Interactive Wheel */}
