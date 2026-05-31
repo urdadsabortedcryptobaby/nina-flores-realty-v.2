@@ -53,7 +53,9 @@ export default function Navbar({ locale }: NavbarProps) {
     },
     resources: {
       label: 'Resources',
+      href: `${base}/resources`,
       items: [
+        { href: `${base}/resources`, label: 'Your Real Estate Resources' },
         { href: `${base}/blog?category=market-updates`, label: 'Market Updates' },
         { href: `${base}/blog?category=buying-tips`, label: 'Buying Tips' },
         { href: `${base}/blog?category=selling-tips`, label: 'Selling Tips' },
