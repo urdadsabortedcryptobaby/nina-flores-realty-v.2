@@ -124,6 +124,14 @@ export default async function BuyingPage({ params }: { params: Promise<{ locale:
             >
               <Download size={14} /> Get My FREE Buyer&apos;s Guide
             </a>
+            <a
+              href="/BuyerAdvisory.pdf"
+              download
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-sm font-bold text-sm transition-colors hover:bg-white/10"
+              style={{ border: '1px solid rgba(255,255,255,0.25)', color: 'var(--color-cream)', fontFamily: 'var(--font-body)' }}
+            >
+              <Download size={14} /> Buyer Advisory
+            </a>
           </div>
         </div>
         <MovingAnimation />
