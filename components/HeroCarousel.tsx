@@ -329,13 +329,13 @@ export default function HeroCarousel({ locale }: HeroCarouselProps) {
             Nina handles every detail — pricing, marketing, negotiating — so you walk away with the best possible outcome.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#contact"
+            <Link
+              href={`${base}/selling`}
               className="px-8 py-3.5 rounded-sm font-bold text-base text-white transition-opacity hover:opacity-90"
               style={{ background: 'var(--color-maroon)', fontFamily: 'var(--font-body)' }}
             >
-              Contact Nina
-            </a>
+              Selling Your Home
+            </Link>
             <Link
               href={`${base}/selling/home-worth`}
               className="px-8 py-3.5 rounded-sm font-bold text-base border-2 transition-colors hover:bg-maroon/10 text-center"
