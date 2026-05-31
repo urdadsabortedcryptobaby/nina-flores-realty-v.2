@@ -116,25 +116,48 @@ export default async function BuyingPage({ params }: { params: Promise<{ locale:
             >
               I&apos;m a First Time Homebuyer
             </Link>
-            <a
-              href="/BuyerGuide.pdf"
-              download
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-sm font-bold text-sm transition-colors hover:bg-white/10"
-              style={{ border: '1px solid rgba(201,168,76,0.5)', color: 'var(--color-cream)', fontFamily: 'var(--font-body)' }}
-            >
-              <Download size={14} /> Get My FREE Buyer&apos;s Guide
-            </a>
-            <a
-              href="/BuyerAdvisory.pdf"
-              download
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-sm font-bold text-sm transition-colors hover:bg-white/10"
-              style={{ border: '1px solid rgba(255,255,255,0.25)', color: 'var(--color-cream)', fontFamily: 'var(--font-body)' }}
-            >
-              <Download size={14} /> Buyer Advisory
-            </a>
           </div>
         </div>
         <MovingAnimation />
+      </section>
+
+      {/* Free Resources */}
+      <section className="py-10 px-4" style={{ background: 'var(--color-cream-dark)' }}>
+        <div className="max-w-3xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-center mb-5 opacity-60" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-charcoal)' }}>
+            Free Resources
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a
+              href="/BuyerAdvisory.pdf"
+              download
+              className="flex items-center gap-4 rounded-sm p-5 transition-opacity hover:opacity-90"
+              style={{ background: 'var(--color-maroon)', color: 'white' }}
+            >
+              <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={{ background: 'rgba(255,255,255,0.15)' }}>
+                <Download size={18} />
+              </div>
+              <div>
+                <p className="font-bold text-sm" style={{ fontFamily: 'var(--font-display)' }}>Buyer Advisory</p>
+                <p className="text-xs opacity-70 mt-0.5" style={{ fontFamily: 'var(--font-body)' }}>Arizona Association of REALTORS® — PDF</p>
+              </div>
+            </a>
+            <a
+              href="/BuyerGuide.pdf"
+              download
+              className="flex items-center gap-4 rounded-sm p-5 transition-opacity hover:opacity-90"
+              style={{ background: 'var(--color-gold)', color: 'var(--color-charcoal)' }}
+            >
+              <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={{ background: 'rgba(0,0,0,0.12)' }}>
+                <Download size={18} />
+              </div>
+              <div>
+                <p className="font-bold text-sm" style={{ fontFamily: 'var(--font-display)' }}>OMNI Buyer&apos;s Guide</p>
+                <p className="text-xs opacity-70 mt-0.5" style={{ fontFamily: 'var(--font-body)' }}>Omni Homes International — PDF</p>
+              </div>
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Reassurance strip */}
