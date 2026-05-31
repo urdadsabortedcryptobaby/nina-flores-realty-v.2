@@ -334,7 +334,7 @@ export default function HeroCarousel({ locale }: HeroCarouselProps) {
               className="px-8 py-3.5 rounded-sm font-bold text-base text-white transition-opacity hover:opacity-90"
               style={{ background: 'var(--color-maroon)', fontFamily: 'var(--font-body)' }}
             >
-              Selling Your Home
+              Sell My Home Now
             </Link>
             <Link
               href={`${base}/selling/home-worth`}
