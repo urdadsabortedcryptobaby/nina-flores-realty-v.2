@@ -32,7 +32,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     { icon: Users, key: 'firstTimeBuyers', href: `${base}/first-time-buyers` },
     { icon: Award, key: 'luxury', href: `${base}/contact` },
     { icon: Home, key: 'relocation', href: `${base}/neighborhoods` },
-    { icon: TrendingUp, key: 'investment', href: `${base}/investment` },
+    { icon: TrendingUp, key: 'investment', href: `${base}/investing` },
     { icon: Building2, key: 'newBuilds', href: `${base}/new-builds` },
     { icon: DoorOpen, key: 'renters', href: `${base}/rent-trap` },
   ] as const;

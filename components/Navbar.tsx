@@ -29,6 +29,7 @@ export default function Navbar({ locale }: NavbarProps) {
         { href: `${base}/first-time-buyers/process`, label: 'The Buying Process' },
         { href: `${base}/first-time-buyers/prequalify`, label: 'Get Pre-Qualified' },
         { href: `${base}/first-time-buyers/tips`, label: 'Tips for Homebuying' },
+        { href: `${base}/investing`, label: 'Investment Properties' },
       ],
     },
     selling: {
@@ -37,7 +38,7 @@ export default function Navbar({ locale }: NavbarProps) {
       items: [
         { href: `${base}/selling/home-worth`, label: "What's My Home Worth?" },
         { href: `${base}/selling/checklist`, label: 'Selling Checklist' },
-        { href: `${base}/investing`, label: 'Investing in Real Estate' },
+        { href: `${base}/investing`, label: 'Investment Properties' },
         { href: `${base}/blog?category=selling-tips`, label: 'Selling Tips' },
       ],
     },
@@ -45,6 +46,7 @@ export default function Navbar({ locale }: NavbarProps) {
       label: 'Explore Southern AZ',
       items: [
         { href: `${base}/neighborhoods`, label: 'Neighborhoods' },
+        { href: `${base}/investment`, label: 'Investing in Tucson' },
         { href: `${base}/events`, label: 'Events' },
         { href: `${base}/blog?category=neighborhood-spotlights`, label: 'Neighborhood Spotlights' },
       ],
