@@ -207,7 +207,7 @@ export default async function HomeWorthPage({ params }: { params: Promise<{ loca
       {/* Nina CTA */}
       <section className="py-14 px-4 text-center" style={{ background: 'var(--color-maroon)' }}>
         <h2 className="text-2xl font-black text-white mb-3" style={{ fontFamily: 'var(--font-display)' }}>
-          Ready to know what your home is worth?
+          Ready to know what your home could be worth?
         </h2>
         <p
           className="opacity-75 mb-6 max-w-md mx-auto"
