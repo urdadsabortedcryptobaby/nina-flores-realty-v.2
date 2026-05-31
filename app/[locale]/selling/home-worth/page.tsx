@@ -113,7 +113,7 @@ export default async function HomeWorthPage({ params }: { params: Promise<{ loca
                 className="inline-block px-7 py-3.5 rounded-sm font-bold text-base text-white transition-opacity hover:opacity-90"
                 style={{ background: 'var(--color-maroon)', fontFamily: 'var(--font-body)' }}
               >
-                Get your Free CMA Today →
+                Request a Free CMA Today →
               </Link>
             </div>
           </Section>
