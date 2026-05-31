@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { setRequestLocale } from 'next-intl/server';
-import { DollarSign } from 'lucide-react';
+import { DollarSign, Download } from 'lucide-react';
 import BuyingProcessWheel from '@/components/BuyingProcessWheel';
 
 export const metadata: Metadata = {
@@ -127,9 +127,17 @@ export default async function BuyingProcessPage({ params }: { params: Promise<{ 
         <h1 className="text-4xl sm:text-5xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
           The Home Buying Process
         </h1>
-        <p className="text-base opacity-80 max-w-xl mx-auto" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-cream)' }}>
+        <p className="text-base opacity-80 max-w-xl mx-auto mb-7" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-cream)' }}>
           12 steps from your first conversation with Nina to getting your keys. Click any step to jump to that section.
         </p>
+        <a
+          href="/BuyerAdvisory.pdf"
+          download
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-sm font-bold text-sm transition-colors hover:bg-white/10"
+          style={{ border: '1px solid rgba(201,168,76,0.5)', color: 'var(--color-cream)', fontFamily: 'var(--font-body)' }}
+        >
+          <Download size={14} /> Download the Buyer Advisory
+        </a>
       </div>
 
       {/* Interactive Wheel */}

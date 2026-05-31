@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { setRequestLocale } from 'next-intl/server';
 import {
-  Search, FileText, Home, Key, CheckSquare, DollarSign, ExternalLink,
+  Search, FileText, Home, Key, CheckSquare, DollarSign, ExternalLink, Download,
 } from 'lucide-react';
 import FloatingChat from '@/components/FloatingChat';
 import CincLink from '@/components/CincLink';
@@ -86,11 +86,19 @@ export default async function FirstTimeBuyersPage({ params }: { params: Promise<
             Buying a home for the first time can be confusing.
           </h1>
           <p
-            className="text-lg leading-relaxed opacity-85"
+            className="text-lg leading-relaxed opacity-85 mb-8"
             style={{ fontFamily: 'var(--font-body)', color: 'var(--color-cream)' }}
           >
             That&apos;s completely normal — and it&apos;s exactly why Nina is here. She&apos;s guided dozens of first-time buyers through the process from start to keys-in-hand, making sure you understand every step and never feel alone.
           </p>
+          <a
+            href="/BuyerAdvisory.pdf"
+            download
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-sm font-bold text-sm transition-colors hover:bg-white/10"
+            style={{ border: '1px solid rgba(201,168,76,0.5)', color: 'var(--color-cream)', fontFamily: 'var(--font-body)' }}
+          >
+            <Download size={14} /> Download the Buyer Advisory
+          </a>
         </div>
         {/* Moving animation — people carry boxes into a house */}
         <MovingAnimation />
