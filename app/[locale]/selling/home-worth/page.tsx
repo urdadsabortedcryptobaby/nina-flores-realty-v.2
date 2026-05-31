@@ -224,13 +224,6 @@ export default async function HomeWorthPage({ params }: { params: Promise<{ loca
           >
             Get My Free CMA
           </Link>
-          <a
-            href="tel:5203424124"
-            className="inline-block px-8 py-3.5 rounded-sm font-bold text-base text-white border-2 transition-colors hover:bg-white/10"
-            style={{ borderColor: 'rgba(255,255,255,0.4)', fontFamily: 'var(--font-body)' }}
-          >
-            Call 520.342.4124
-          </a>
         </div>
       </section>
     </>
