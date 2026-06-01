@@ -13,7 +13,7 @@ const CHECKLIST: { phase: string; items: string[] }[] = [
   {
     phase: 'Before You List',
     items: [
-      'Interview at least two agents and review their CMA reports',
+      "Speak with a licensed agent and ask for a CMA report. Lucky for you Nina's already got your back. Contact her today!",
       'Set a target list price based on current market data',
       'Review your mortgage payoff amount and estimated closing costs',
       'Gather all paperwork: title, permits, warranties, HOA docs',
