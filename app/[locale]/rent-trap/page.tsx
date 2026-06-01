@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { setRequestLocale } from 'next-intl/server';
 import { AlertTriangle, TrendingUp, Home, Heart, BookOpen, CheckCircle } from 'lucide-react';
-import FloatingChat from '@/components/FloatingChat';
 
 export const metadata: Metadata = {
   title: 'Escape the Rent Trap | Nina Flores Realty',
@@ -40,13 +39,45 @@ export default async function RentTrapPage({ params }: { params: Promise<{ local
           >
             Every month you write a rent check, you&apos;re building your landlord&apos;s wealth — not yours. Nina has helped renters across Tucson make the leap to homeownership, even when it felt impossible. You may be closer than you think.
           </p>
-          <Link
-            href={`${base}/contact`}
-            className="inline-block px-8 py-3.5 rounded-sm font-bold text-base transition-opacity hover:opacity-90"
-            style={{ background: 'var(--color-gold)', color: 'var(--color-charcoal)', fontFamily: 'var(--font-body)' }}
-          >
-            Talk to Nina Today
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
+            <Link
+              href={`${base}/contact`}
+              className="inline-block px-8 py-3.5 rounded-sm font-bold text-base transition-opacity hover:opacity-90"
+              style={{ background: 'var(--color-gold)', color: 'var(--color-charcoal)', fontFamily: 'var(--font-body)' }}
+            >
+              Talk to Nina Today
+            </Link>
+
+            {/* Workbook download placeholder */}
+            <div
+              className="flex items-center gap-3 px-5 py-3.5 rounded-sm cursor-not-allowed"
+              style={{
+                background: 'rgba(245,239,230,0.1)',
+                border: '2px dashed rgba(201,168,76,0.6)',
+              }}
+            >
+              <div
+                className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
+                style={{ background: 'rgba(201,168,76,0.15)', color: 'var(--color-gold)' }}
+              >
+                <BookOpen size={18} />
+              </div>
+              <div className="text-left">
+                <p
+                  className="font-bold text-sm leading-snug text-white"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  Renter&apos;s Workbook to Homeownership
+                </p>
+                <p
+                  className="text-xs mt-0.5 opacity-60"
+                  style={{ fontFamily: 'var(--font-body)', color: 'var(--color-cream)' }}
+                >
+                  Coming Soon — PDF
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -293,12 +324,45 @@ export default async function RentTrapPage({ params }: { params: Promise<{ local
               </div>
             ))}
           </div>
-          <p
-            className="text-sm italic opacity-60 mb-8"
-            style={{ fontFamily: 'var(--font-body)', color: 'var(--color-cream)' }}
-          >
-            Digital workbook — coming soon. Contact Nina to get yours directly.
-          </p>
+          {/* Download placeholder card */}
+          <div className="mt-8 mb-8">
+            <p
+              className="text-xs uppercase tracking-widest mb-4 opacity-70"
+              style={{ color: 'var(--color-gold)', fontFamily: 'var(--font-body)' }}
+            >
+              Downloads
+            </p>
+            <div
+              className="flex items-center gap-5 px-6 py-5 rounded-sm max-w-md mx-auto cursor-not-allowed"
+              style={{
+                background: 'var(--color-cream)',
+                border: '2px dashed var(--color-gold)',
+                opacity: 0.85,
+              }}
+            >
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
+                style={{ background: 'rgba(201,168,76,0.15)', color: 'var(--color-maroon)' }}
+              >
+                <BookOpen size={22} />
+              </div>
+              <div className="text-left">
+                <p
+                  className="font-bold text-base leading-snug"
+                  style={{ fontFamily: 'var(--font-display)', color: 'var(--color-charcoal)' }}
+                >
+                  Renter&apos;s Workbook to Homeownership
+                </p>
+                <p
+                  className="text-sm mt-0.5 opacity-60"
+                  style={{ fontFamily: 'var(--font-body)', color: 'var(--color-charcoal)' }}
+                >
+                  Coming Soon — PDF
+                </p>
+              </div>
+            </div>
+          </div>
+
           <Link
             href={`${base}/contact`}
             className="inline-block px-8 py-3.5 rounded-sm font-bold text-base transition-opacity hover:opacity-90"
@@ -343,7 +407,6 @@ export default async function RentTrapPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
-      <FloatingChat locale={locale} />
     </>
   );
 }
