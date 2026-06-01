@@ -60,8 +60,10 @@ export default function BuyingProcessWheel() {
   const rafRef      = useRef<number | null>(null);
   const lastAngle   = useRef(0);
   const lastTime    = useRef(0);
-  const isTouching  = useRef(false);
-  const spinHighlight = useRef<number | null>(null); // tracked during spin
+  const isTouching    = useRef(false);
+  const spinHighlight = useRef<number | null>(null);
+  const activeRef     = useRef<number | null>(null); // mirrors active for use in touch handlers
+  const touchStartPos = useRef({ x: 0, y: 0 });
 
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -102,6 +104,7 @@ export default function BuyingProcessWheel() {
       } else {
         applyRot(target);
         updateColors(idx);
+        activeRef.current = idx;
         setActive(idx);   // ← React state: triggers scale animation
         rafRef.current = null;
       }
@@ -177,15 +180,29 @@ export default function BuyingProcessWheel() {
         onTouchStart={e => {
           isTouching.current = true;
           stopAnimation();
-          setActive(null);
-          updateColors(null);
           const t = e.touches[0];
+          touchStartPos.current = { x: t.clientX, y: t.clientY };
           lastAngle.current = touchAngleDeg(t.clientX, t.clientY);
           lastTime.current  = performance.now();
           velRef.current    = 0;
+          // Don't clear active yet — we need it in onTouchEnd to detect tap-to-scroll
         }}
-        onTouchEnd={() => {
+        onTouchEnd={e => {
           isTouching.current = false;
+          const t = e.changedTouches[0];
+          const dist = Math.hypot(
+            t.clientX - touchStartPos.current.x,
+            t.clientY - touchStartPos.current.y
+          );
+          // Short tap on an already-highlighted wheel → scroll to that section
+          if (dist < 12 && activeRef.current !== null) {
+            scrollTo(steps[activeRef.current].id);
+            return;
+          }
+          // Otherwise it's a spin — clear active and launch momentum
+          activeRef.current = null;
+          setActive(null);
+          updateColors(null);
           launchMomentum();
         }}
       >
