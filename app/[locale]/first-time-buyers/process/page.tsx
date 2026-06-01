@@ -151,8 +151,8 @@ export default async function BuyingProcessPage({ params }: { params: Promise<{ 
       </div>
 
       {/* Interactive Wheel */}
-      <section className="py-16 px-4" style={{ background: 'var(--color-cream)' }}>
-        <div className="max-w-3xl mx-auto">
+      <section className="py-8 sm:py-16 px-0 sm:px-4" style={{ background: 'var(--color-cream)' }}>
+        <div className="w-full max-w-3xl mx-auto">
           <BuyingProcessWheel />
         </div>
       </section>

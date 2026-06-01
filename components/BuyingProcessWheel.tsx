@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 
 const CX = 300, CY = 300;
-const OUTER_R = 260, INNER_R = 115;  // smaller outer radius = more breathing room
+const OUTER_R = 255, INNER_R = 112;
 const GAP = 1.8;
 const R_MID = (OUTER_R + INNER_R) / 2;
 
@@ -167,10 +167,10 @@ export default function BuyingProcessWheel() {
   }, []);
 
   return (
-    <div className="w-full max-w-2xl mx-auto flex flex-col items-center gap-4">
+    <div className="w-full flex flex-col items-center gap-4">
       <svg
         ref={svgRef}
-        viewBox="35 20 530 565"
+        viewBox="38 -10 524 590"
         overflow="visible"
         className="w-full h-auto"
         style={{ userSelect: 'none', touchAction: 'none', filter: 'drop-shadow(0 10px 32px rgba(0,0,0,0.18))' }}
@@ -198,8 +198,8 @@ export default function BuyingProcessWheel() {
             const anyActive = active !== null;
             const textAngle = midDeg <= 180 ? midDeg - 90 : midDeg + 90;
 
-            // Scale effect (desktop hover + post-spin landing)
-            const scaleVal = anyActive ? (isOn ? 1.28 : 0.93) : 1.0;
+            // Scale effect — keep it modest so slices don't cover the START indicator
+            const scaleVal = anyActive ? (isOn ? 1.14 : 0.95) : 1.0;
 
             return (
               <g
@@ -227,21 +227,24 @@ export default function BuyingProcessWheel() {
                   transform={`translate(${midPt.x} ${midPt.y}) rotate(${textAngle})`}
                   style={{ pointerEvents: 'none' }}
                 >
-                  <text x="0" y="-22"
+                  {/* Step number — large and bold */}
+                  <text x="0" y="-24"
                     textAnchor="middle" dominantBaseline="middle"
-                    fill={isOn ? 'rgba(0,0,0,0.35)' : 'rgba(255,255,255,0.65)'}
-                    fontSize="32" fontWeight="900" fontFamily="Georgia, serif"
+                    fill={isOn ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.7)'}
+                    fontSize="38" fontWeight="900" fontFamily="Georgia, serif"
                     style={{ transition: 'fill 0.15s' }}
                   >{i + 1}</text>
 
-                  <text x="0" y="6"
+                  {/* Label line 1 */}
+                  <text x="0" y="8"
                     textAnchor="middle" dominantBaseline="middle"
                     fill={isOn ? '#111' : 'white'}
                     fontSize="14" fontWeight="700" fontFamily="Georgia, serif"
                     style={{ transition: 'fill 0.15s' }}
                   >{step.line1}</text>
 
-                  <text x="0" y="22"
+                  {/* Label line 2 */}
+                  <text x="0" y="24"
                     textAnchor="middle" dominantBaseline="middle"
                     fill={isOn ? '#222' : 'rgba(255,255,255,0.88)'}
                     fontSize="14" fontWeight="700" fontFamily="Georgia, serif"
@@ -266,13 +269,13 @@ export default function BuyingProcessWheel() {
           You are a new homeowner!
         </text>
 
-        {/* START label + pointer — sits above the outer ring, never rotates */}
-        <text x={CX} y={CY - OUTER_R - 18} textAnchor="middle" fontSize="11"
-          fontWeight="bold" fill="#6B1A2A" fontFamily="Georgia, serif" letterSpacing="2"
+        {/* START label + pointer — fixed well above the wheel ring */}
+        <text x={CX} y={CY - OUTER_R - 32} textAnchor="middle" fontSize="12"
+          fontWeight="bold" fill="#6B1A2A" fontFamily="Georgia, serif" letterSpacing="3"
         >START</text>
         <polygon
-          points={`${CX - 8},${CY - OUTER_R - 8} ${CX + 8},${CY - OUTER_R - 8} ${CX},${CY - OUTER_R + 4}`}
-          fill="#6B1A2A" opacity="0.75"
+          points={`${CX - 10},${CY - OUTER_R - 20} ${CX + 10},${CY - OUTER_R - 20} ${CX},${CY - OUTER_R - 6}`}
+          fill="#6B1A2A" opacity="0.8"
         />
       </svg>
 
