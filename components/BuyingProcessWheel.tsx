@@ -167,8 +167,11 @@ export default function BuyingProcessWheel() {
   }, []);
 
   return (
-    // Extra padding so scaled-up slices don't get clipped
-    <div className="w-full max-w-2xl mx-auto flex flex-col items-center gap-4 px-6 py-4">
+    <div className="w-full max-w-2xl mx-auto flex flex-col items-center gap-2">
+      {/* START label — HTML so it never overlaps wheel content */}
+      <p className="text-xs font-bold tracking-widest" style={{ color: 'var(--color-maroon)', fontFamily: 'var(--font-body)' }}>
+        START ▼
+      </p>
       <svg
         ref={svgRef}
         viewBox="0 0 600 600"
@@ -228,10 +231,10 @@ export default function BuyingProcessWheel() {
                   transform={`translate(${midPt.x} ${midPt.y}) rotate(${textAngle})`}
                   style={{ pointerEvents: 'none' }}
                 >
-                  <text x="0" y="-18"
+                  <text x="0" y="-20"
                     textAnchor="middle" dominantBaseline="middle"
-                    fill={isOn ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.4)'}
-                    fontSize="16" fontWeight="900" fontFamily="Georgia, serif"
+                    fill={isOn ? 'rgba(0,0,0,0.35)' : 'rgba(255,255,255,0.6)'}
+                    fontSize="22" fontWeight="900" fontFamily="Georgia, serif"
                     style={{ transition: 'fill 0.15s' }}
                   >{i + 1}</text>
 
@@ -267,12 +270,9 @@ export default function BuyingProcessWheel() {
           You are a new homeowner!
         </text>
 
-        {/* Fixed pointer at top */}
-        <text x={CX} y={22} textAnchor="middle" fontSize="10"
-          fontWeight="bold" fill="#6B1A2A" fontFamily="Georgia, serif" letterSpacing="2"
-        >START ▼</text>
+        {/* Pointer only — START label is HTML above the SVG */}
         <polygon
-          points={`${CX - 8},${36} ${CX + 8},${36} ${CX},${48}`}
+          points={`${CX - 9},${CY - OUTER_R - 22} ${CX + 9},${CY - OUTER_R - 22} ${CX},${CY - OUTER_R - 8}`}
           fill="#6B1A2A" opacity="0.7"
         />
       </svg>
