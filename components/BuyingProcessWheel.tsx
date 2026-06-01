@@ -167,15 +167,11 @@ export default function BuyingProcessWheel() {
   }, []);
 
   return (
-    <div className="w-full max-w-2xl mx-auto flex flex-col items-center gap-2">
-      {/* START label — HTML so it never overlaps wheel content */}
-      <p className="text-xs font-bold tracking-widest" style={{ color: 'var(--color-maroon)', fontFamily: 'var(--font-body)' }}>
-        START ▼
-      </p>
+    <div className="w-full max-w-2xl mx-auto flex flex-col items-center gap-4">
       <svg
         ref={svgRef}
-        viewBox="0 0 600 600"
-        overflow="visible"           // ← lets scaled segments draw outside viewBox
+        viewBox="35 20 530 565"
+        overflow="visible"
         className="w-full h-auto"
         style={{ userSelect: 'none', touchAction: 'none', filter: 'drop-shadow(0 10px 32px rgba(0,0,0,0.18))' }}
         onTouchStart={e => {
@@ -231,24 +227,24 @@ export default function BuyingProcessWheel() {
                   transform={`translate(${midPt.x} ${midPt.y}) rotate(${textAngle})`}
                   style={{ pointerEvents: 'none' }}
                 >
-                  <text x="0" y="-20"
+                  <text x="0" y="-22"
                     textAnchor="middle" dominantBaseline="middle"
-                    fill={isOn ? 'rgba(0,0,0,0.35)' : 'rgba(255,255,255,0.6)'}
-                    fontSize="22" fontWeight="900" fontFamily="Georgia, serif"
+                    fill={isOn ? 'rgba(0,0,0,0.35)' : 'rgba(255,255,255,0.65)'}
+                    fontSize="32" fontWeight="900" fontFamily="Georgia, serif"
                     style={{ transition: 'fill 0.15s' }}
                   >{i + 1}</text>
 
-                  <text x="0" y="1"
+                  <text x="0" y="6"
                     textAnchor="middle" dominantBaseline="middle"
                     fill={isOn ? '#111' : 'white'}
-                    fontSize="13" fontWeight="700" fontFamily="Georgia, serif"
+                    fontSize="14" fontWeight="700" fontFamily="Georgia, serif"
                     style={{ transition: 'fill 0.15s' }}
                   >{step.line1}</text>
 
-                  <text x="0" y="17"
+                  <text x="0" y="22"
                     textAnchor="middle" dominantBaseline="middle"
                     fill={isOn ? '#222' : 'rgba(255,255,255,0.88)'}
-                    fontSize="13" fontWeight="700" fontFamily="Georgia, serif"
+                    fontSize="14" fontWeight="700" fontFamily="Georgia, serif"
                     style={{ transition: 'fill 0.15s' }}
                   >{step.line2}</text>
                 </g>
@@ -270,10 +266,13 @@ export default function BuyingProcessWheel() {
           You are a new homeowner!
         </text>
 
-        {/* Pointer only — START label is HTML above the SVG */}
+        {/* START label + pointer — sits above the outer ring, never rotates */}
+        <text x={CX} y={CY - OUTER_R - 18} textAnchor="middle" fontSize="11"
+          fontWeight="bold" fill="#6B1A2A" fontFamily="Georgia, serif" letterSpacing="2"
+        >START</text>
         <polygon
-          points={`${CX - 9},${CY - OUTER_R - 22} ${CX + 9},${CY - OUTER_R - 22} ${CX},${CY - OUTER_R - 8}`}
-          fill="#6B1A2A" opacity="0.7"
+          points={`${CX - 8},${CY - OUTER_R - 8} ${CX + 8},${CY - OUTER_R - 8} ${CX},${CY - OUTER_R + 4}`}
+          fill="#6B1A2A" opacity="0.75"
         />
       </svg>
 
