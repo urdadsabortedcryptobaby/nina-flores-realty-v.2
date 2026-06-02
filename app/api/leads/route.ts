@@ -12,7 +12,8 @@ export async function POST(req: NextRequest) {
 
   try {
     const supabase = await createServiceClient();
-    await supabase.from('leads').insert({ name, email, phone, preferred_language, inquiry_type, message });
+    const { error: dbError } = await supabase.from('leads').insert({ name, email, phone, preferred_language, inquiry_type, message });
+    if (dbError) console.error('Supabase insert error:', dbError);
 
     await getResend().emails.send({
       from: 'Nina Flores Realty <no-reply@ninafloresrealty.com>',
