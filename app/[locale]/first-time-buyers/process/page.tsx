@@ -92,12 +92,12 @@ const expenses = [
   },
   {
     label: 'Home Inspection',
-    range: '$350–$550',
+    range: '$300–$1,000',
     detail: 'Paid directly to the inspector, typically within a few days of going under contract. A general inspection covers the structure, roof, HVAC, plumbing, and electrical. Additional inspections (sewer, termite, radon) may be recommended and cost extra.',
   },
   {
     label: 'Appraisal',
-    range: '$500–$750',
+    range: '$600–$1,000',
     detail: "Required by your lender to confirm the home's market value. Usually paid when the appraisal is ordered, or rolled into closing costs depending on your lender. If the appraisal comes in low, Nina will negotiate on your behalf.",
   },
   {
@@ -107,7 +107,7 @@ const expenses = [
   },
   {
     label: 'Closing Costs',
-    range: '2%–5% of loan amount',
+    range: '1%–5% of loan amount',
     detail: 'Closing costs include lender fees (origination, underwriting), title fees, escrow fees, prepaid insurance, and property tax reserves. Your lender will provide a Loan Estimate within 3 days of application — review it with Nina before proceeding.',
   },
 ];

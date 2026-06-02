@@ -44,10 +44,10 @@ const documents = [
 
 const upfrontCosts = [
   { label: 'Earnest Money Deposit', range: '1%–2% of purchase price', note: 'Applied to your down payment at closing' },
-  { label: 'Home Inspection', range: '$350–$550', note: 'Paid when inspection is scheduled' },
-  { label: 'Appraisal', range: '$500–$750', note: 'Required by lender; confirms home value' },
+  { label: 'Home Inspection', range: '$300–$1,000', note: 'Paid when inspection is scheduled' },
+  { label: 'Appraisal', range: '$600–$1,000', note: 'Required by lender; confirms home value' },
   { label: 'Down Payment', range: '3%–20%+ of purchase price', note: 'FHA: 3.5% · Conventional: as low as 3%' },
-  { label: 'Closing Costs', range: '2%–5% of loan amount', note: 'Lender fees, title, escrow, prepaid items' },
+  { label: 'Closing Costs', range: '1%–5% of loan amount', note: 'Lender fees, title, escrow, prepaid items' },
 ];
 
 export default async function PrequalifyPage({ params }: { params: Promise<{ locale: string }> }) {
