@@ -3,4 +3,4 @@ import { Resend } from 'resend';
 export function getResend() {
   return new Resend(process.env.RESEND_API_KEY ?? 'placeholder');
 }
-export const NINA_EMAIL = process.env.NINA_EMAIL ?? 'NinaFloresRealty@gmail.com';
+export const NINA_EMAIL = process.env.NINA_EMAIL ?? 'ninafloresrealty@gmail.com';
