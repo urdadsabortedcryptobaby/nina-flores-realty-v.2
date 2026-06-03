@@ -99,7 +99,7 @@ export default function Footer({ locale }: FooterProps) {
         </div>
       </div>
 
-      <div className="border-t border-white/10 text-center py-4 text-xs opacity-40" style={{ fontFamily: 'var(--font-body)' }}>
+      <div className="border-t border-white/10 text-center py-4 pb-24 sm:pb-4 text-xs opacity-40" style={{ fontFamily: 'var(--font-body)' }}>
         © {new Date().getFullYear()} Nina Flores · {t('rights')}
         <span className="mx-2">·</span>
         <a
