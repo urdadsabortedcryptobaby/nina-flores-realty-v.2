@@ -101,6 +101,15 @@ export default function Footer({ locale }: FooterProps) {
 
       <div className="border-t border-white/10 text-center py-4 text-xs opacity-40" style={{ fontFamily: 'var(--font-body)' }}>
         © {new Date().getFullYear()} Nina Flores · {t('rights')}
+        <span className="mx-2">·</span>
+        <a
+          href="https://selfmediaproductions.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:opacity-70 transition-opacity"
+        >
+          Built and Powered by Self Media Productions
+        </a>
       </div>
     </footer>
   );
