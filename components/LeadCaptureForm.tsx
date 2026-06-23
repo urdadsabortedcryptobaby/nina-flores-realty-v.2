@@ -11,7 +11,19 @@ export default function LeadCaptureForm() {
     e.preventDefault();
     setStatus('loading');
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const formData = new FormData(form);
+
+    // Honeypot check — bots fill hidden fields, humans never see this field
+    if (formData.get('website')) {
+      setStatus('success'); // Silently succeed so bots don't know they were caught
+      form.reset();
+      return;
+    }
+
+    // Remove honeypot field before sending to server
+    const data = Object.fromEntries(formData);
+    delete data.website;
+
     try {
       const res = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
       if (!res.ok) throw new Error();
@@ -29,7 +41,7 @@ export default function LeadCaptureForm() {
   const labelStyle: React.CSSProperties = { fontFamily: 'var(--font-body)' };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-4 relative" noValidate>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className={labelClass} style={labelStyle}>{t('name')} *</label>
@@ -87,6 +99,18 @@ export default function LeadCaptureForm() {
       <div>
         <label className={labelClass} style={labelStyle}>{t('message')}</label>
         <textarea name="message" rows={4} className={inputClass} style={{ ...inputStyle, ...focusStyle, resize: 'vertical' }} />
+      </div>
+
+      {/* Honeypot — hidden from real users, bots will fill this and get silently rejected */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
+        <label htmlFor="website">Website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
       </div>
 
       {status === 'success' && (

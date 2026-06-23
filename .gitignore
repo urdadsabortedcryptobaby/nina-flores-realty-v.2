@@ -36,6 +36,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# claude code (local config & session data)
+.claude/
+
+# local screenshots / notes (not part of the site)
+Convo Screenshots/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
