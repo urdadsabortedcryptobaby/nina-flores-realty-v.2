@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
@@ -186,6 +186,30 @@ export default function HeroCarousel({ locale }: HeroCarouselProps) {
   const next = useCallback(() => setCurrent(c => (c + 1) % slides), []);
   const prev = () => setCurrent(c => (c - 1 + slides) % slides);
 
+  // ── Touch swipe (mobile) ──
+  // Record where a touch begins; on release, if the horizontal movement is
+  // large enough AND mostly sideways, change slides. Vertical swipes are
+  // ignored so the page can still scroll normally.
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+
+  function onTouchStart(e: React.TouchEvent) {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  }
+
+  function onTouchEnd(e: React.TouchEvent) {
+    if (touchStartX.current === null || touchStartY.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dy = e.changedTouches[0].clientY - touchStartY.current;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) next();
+      else prev();
+    }
+    touchStartX.current = null;
+    touchStartY.current = null;
+  }
+
   useEffect(() => {
     if (paused) return;
     const id = setInterval(next, 7000);
@@ -212,6 +236,8 @@ export default function HeroCarousel({ locale }: HeroCarouselProps) {
       style={{ minHeight: '88vh' }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
     >
       {/* ── SLIDE 1 ── Luxury dark botanical */}
       <div
@@ -429,17 +455,17 @@ export default function HeroCarousel({ locale }: HeroCarouselProps) {
         </div>
       </div>
 
-      {/* ── Navigation arrows ── */}
+      {/* ── Navigation arrows — desktop only; mobile uses finger swipe ── */}
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full flex items-center justify-center bg-black/30 text-white hover:bg-black/50 transition-colors"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full hidden md:flex items-center justify-center bg-black/30 text-white hover:bg-black/50 transition-colors"
         aria-label="Previous slide"
       >
         <ChevronLeft size={20} />
       </button>
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full flex items-center justify-center bg-black/30 text-white hover:bg-black/50 transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full hidden md:flex items-center justify-center bg-black/30 text-white hover:bg-black/50 transition-colors"
         aria-label="Next slide"
       >
         <ChevronRight size={20} />
