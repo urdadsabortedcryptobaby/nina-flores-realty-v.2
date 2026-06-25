@@ -10,7 +10,7 @@ import OmniBanner from '@/components/OmniBanner';
 import FloatingChat from '@/components/FloatingChat';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ninafloresrealty.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.ninafloresrealty.com'),
   title: {
     default: 'Nina Flores | Tucson REALTOR® | Omni Homes International',
     template: '%s | Nina Flores Realty',

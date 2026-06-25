@@ -12,6 +12,7 @@ import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import MortgageCalculator from '@/components/MortgageCalculator';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
 import HeroCarousel from '@/components/HeroCarousel';
+import StructuredData from '@/components/StructuredData';
 
 import { NEIGHBORHOODS } from '@/lib/neighborhoods';
 
@@ -39,6 +40,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
+      {/* RealEstateAgent structured data for local SEO / Google rich results */}
+      <StructuredData />
+
       {/* Hero Carousel */}
       <HeroCarousel locale={locale} />
 

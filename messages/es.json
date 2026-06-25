@@ -45,6 +45,10 @@
     "newBuilds": {
       "title": "Nuevas Construcciones",
       "desc": "Trabaja con Nina para explorar comunidades de nueva construcción en Tucson, Marana, Vail y Sahuarita, con una experta de tu lado."
+    },
+    "renters": {
+      "title": "Inquilinos",
+      "desc": "¿Todavía rentando? Nina ayuda a los inquilinos a dar el salto a ser propietarios — incluso cuando parece fuera de tu alcance. Podrías estar más cerca de lo que crees."
     }
   },
   "listings": {
