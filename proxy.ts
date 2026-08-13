@@ -4,5 +4,5 @@ import { routing } from './i18n/routing';
 export const proxy = createMiddleware(routing);
 
 export const config = {
-  matcher: ['/((?!_next|api|admin|.*\\..*).*)'],
+  matcher: ['/((?!_next|api|admin|links|.*\\..*).*)'],
 };
