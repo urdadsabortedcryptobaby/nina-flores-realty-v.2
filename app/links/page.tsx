@@ -50,11 +50,10 @@ const LINKS: LinkItem[] = [
   },
   {
     label: 'Coyote Flower Cake Pops',
-    sublabel: 'Coming soon',
-    href: '#',
+    sublabel: 'Handmade cake pops — order online',
+    href: 'https://www.coyoteflower.com/cakepops',
     icon: Cake,
-    external: false,
-    comingSoon: true,
+    external: true,
   },
 ];
 
