@@ -35,8 +35,8 @@ const LINKS: LinkItem[] = [
     external: true,
   },
   {
-    label: 'Jewelry Mail Club',
-    sublabel: 'Handmade jewelry, delivered — AngelMade',
+    label: 'Angelmade Showroom',
+    sublabel: 'Handmade jewelry, delivered',
     href: 'https://www.shopangelmade.com/',
     icon: Gem,
     external: true,
