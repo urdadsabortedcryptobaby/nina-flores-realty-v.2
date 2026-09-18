@@ -36,7 +36,7 @@ const LINKS: LinkItem[] = [
   },
   {
     label: 'Angelmade Showroom',
-    sublabel: 'Handmade jewelry, delivered',
+    sublabel: 'Handmade jewelry and Curated Vintage',
     href: 'https://www.shopangelmade.com/',
     icon: Gem,
     external: true,
