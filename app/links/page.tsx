@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Home, Mic, Shirt, Gem, Cake, Clapperboard } from 'lucide-react';
+import { Home, Mic, Shirt, Gem, Cake, Clapperboard, Store } from 'lucide-react';
 import StarField from './StarField';
 
 type LinkItem = {
@@ -39,6 +39,13 @@ const LINKS: LinkItem[] = [
     sublabel: 'Handmade jewelry and Curated Vintage',
     href: 'https://www.shopangelmade.com/',
     icon: Gem,
+    external: true,
+  },
+  {
+    label: 'Angelmade for Shops',
+    sublabel: 'Full catalogue — carry our pieces in your store',
+    href: 'https://www.shopangelmade.com/full-catalogue',
+    icon: Store,
     external: true,
   },
   {
